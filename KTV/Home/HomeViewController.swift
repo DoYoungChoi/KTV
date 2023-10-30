@@ -32,6 +32,14 @@ class HomeViewController: UIViewController {
             forCellReuseIdentifier: HomeVideoCell.identifier
         )
         self.tableView.register(
+            UINib(nibName: HomeRankingContainerCell.identifier, bundle: nil),
+            forCellReuseIdentifier: HomeRankingContainerCell.identifier
+        )
+        self.tableView.register(
+            UINib(nibName: HomeRecentWatchContainerCell.identifier, bundle: nil),
+            forCellReuseIdentifier: HomeRecentWatchContainerCell.identifier
+        )
+        self.tableView.register(
             UINib(nibName: HomeRecommendContainerCell.identifier, bundle: nil),
             forCellReuseIdentifier: HomeRecommendContainerCell.identifier
         )
@@ -57,6 +65,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return 1
         case .video:
             return 2
+        case .ranking:
+            return 1
+        case .recentWatch:
+            return 1
         case .recommend:
             return 1
         case .footer:
@@ -74,6 +86,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return HomeHeaderCell.height
         case .video:
             return HomeVideoCell.height
+        case .ranking:
+            return HomeRankingContainerCell.height
+        case .recentWatch:
+            return HomeRecentWatchContainerCell.height
         case .recommend:
             return HomeRecommendContainerCell.height
         case .footer:
@@ -91,10 +107,44 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return tableView.dequeueReusableCell(withIdentifier: HomeHeaderCell.identifier, for: indexPath)
         case .video:
             return tableView.dequeueReusableCell(withIdentifier: HomeVideoCell.identifier, for: indexPath)
+        case .ranking:
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeRankingContainerCell.identifier, for: indexPath)
+            
+            (cell as? HomeRankingContainerCell)?.delegate = self
+            
+            return cell
+        case .recentWatch:
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecentWatchContainerCell.identifier, for: indexPath)
+            
+            (cell as? HomeRecentWatchContainerCell)?.delegate = self
+            
+            return cell
         case .recommend:
-            return tableView.dequeueReusableCell(withIdentifier: HomeRecommendContainerCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecommendContainerCell.identifier, for: indexPath)
+            
+            (cell as? HomeRecommendContainerCell)?.delegate = self
+            
+            return cell
         case .footer:
             return tableView.dequeueReusableCell(withIdentifier: HomeFooterCell.identifier, for: indexPath)
         }
+    }
+}
+
+extension HomeViewController: HomeRecommendContainerCellDelegate {
+    func homeRecommendContainerCell(_ cell: HomeRecommendContainerCell, didSelectItemAt index: Int) {
+        print("home recommend cell did select at \(index)")
+    }
+}
+
+extension HomeViewController: HomeRankingContainerCellDelegate {
+    func homeRankingContainerCell(_ cell: HomeRankingContainerCell, didSelectItemAt index: Int) {
+        print("home ranking cell did select at \(index)")
+    }
+}
+
+extension HomeViewController: HomeRecentWatchContainerDelegate {
+    func homeRecentWatchContainerDelegate(_ cell: HomeRecentWatchContainerCell, didSelectItemAt index: Int) {
+        print("home recent watch cell did select at \(index)")
     }
 }
