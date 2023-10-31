@@ -22,7 +22,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-3M-8bJ">
                                 <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="gray-4"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="84" id="Mcg-9z-DNC"/>
                                     <constraint firstAttribute="height" constant="84" id="oPZ-Jb-4df"/>
@@ -99,6 +99,9 @@
         <image name="play.fill" catalog="system" width="117" height="128"/>
         <namedColor name="gray-2">
             <color red="0.65499997138977051" green="0.65499997138977051" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray-4">
+            <color red="0.21199999749660492" green="0.20399999618530273" blue="0.20800000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="main-wh">
             <color red="0.99599999189376831" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

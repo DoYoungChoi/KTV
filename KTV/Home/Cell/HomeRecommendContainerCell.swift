@@ -30,6 +30,7 @@ class HomeRecommendContainerCell: UITableViewCell {
     @IBOutlet weak var foldButton: UIButton!
     
     weak var delegate: HomeRecommendContainerCellDelegate?
+    private var recommends: [Home.Recommend]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,6 +55,11 @@ class HomeRecommendContainerCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setData(_ data: [Home.Recommend]) {
+        self.recommends = data
+        self.tableView.reloadData()
     }
 }
 

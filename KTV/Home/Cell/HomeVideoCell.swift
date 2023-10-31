@@ -25,6 +25,9 @@ class HomeVideoCell: UITableViewCell {
     
     @IBOutlet weak var favoriteButton: UIButton!
     
+    private var thumbnailTask: Task<Void, Never>?
+    private var channelThumbnailTask: Task<Void, Never>?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -40,4 +43,25 @@ class HomeVideoCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setData(_ data: Home.Video) {
+        self.hotImageView.isHidden = !data.isHot
+        self.titleLabel.text = data.title
+        self.subtitleLabel.text = data.subtitle
+        self.channelTitleLabel.text = data.channel
+        self.channelSubtitleLabel.text = data.channelDescription
+        self.thumbnailTask = .init {
+            guard let responseData = try? await URLSession.shared.data(for: .init(url: data.imageUrl)).0 else {
+                return
+            }
+            
+            self.thumbnailImageView.image = UIImage(data: responseData)
+        }
+        self.channelThumbnailTask = .init {
+            guard let responseData = try? await URLSession.shared.data(for: .init(url: data.channelThumbnailURL)).0 else {
+                return
+            }
+            
+            self.channelImageView.image = UIImage(data: responseData)
+        }
+    }
 }

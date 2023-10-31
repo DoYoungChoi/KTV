@@ -35,6 +35,9 @@
 		D83D23E92AEFB87300331011 /* HomeRecentWatchItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83D23E72AEFB87300331011 /* HomeRecentWatchItemCell.xib */; };
 		D83D23F02AEFB90800331011 /* HomeRecentWatchContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D23EE2AEFB90800331011 /* HomeRecentWatchContainerCell.swift */; };
 		D83D23F12AEFB90800331011 /* HomeRecentWatchContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83D23EF2AEFB90800331011 /* HomeRecentWatchContainerCell.xib */; };
+		D83D23F42AF0A59800331011 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D23F32AF0A59800331011 /* Home.swift */; };
+		D83D23F72AF0A6FD00331011 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = D83D23F62AF0A6FD00331011 /* home.json */; };
+		D83D23F92AF0B63F00331011 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D23F82AF0B63F00331011 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		D83D23E72AEFB87300331011 /* HomeRecentWatchItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecentWatchItemCell.xib; sourceTree = "<group>"; };
 		D83D23EE2AEFB90800331011 /* HomeRecentWatchContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentWatchContainerCell.swift; sourceTree = "<group>"; };
 		D83D23EF2AEFB90800331011 /* HomeRecentWatchContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecentWatchContainerCell.xib; sourceTree = "<group>"; };
+		D83D23F32AF0A59800331011 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		D83D23F62AF0A6FD00331011 /* home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
+		D83D23F82AF0B63F00331011 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,8 @@
 			children = (
 				D83D239C2AEB855100331011 /* AppDelegate.swift */,
 				D83D239E2AEB855100331011 /* SceneDelegate.swift */,
+				D83D23F22AF0A58800331011 /* Models */,
+				D83D23F52AF0A6BB00331011 /* JSON */,
 				D83D23B22AEB92D900331011 /* Login */,
 				D83D23B32AEB963F00331011 /* Home */,
 				D83D23A22AEB855100331011 /* Main.storyboard */,
@@ -127,6 +135,7 @@
 				D83D23C62AEBB25F00331011 /* TabBarController.swift */,
 				D83D23B72AEB96BA00331011 /* Cell */,
 				D83D23B42AEB964F00331011 /* HomeViewController.swift */,
+				D83D23F82AF0B63F00331011 /* HomeViewModel.swift */,
 				D83D23C42AEBAE3300331011 /* HomeSection.swift */,
 			);
 			path = Home;
@@ -155,6 +164,22 @@
 				D83D23CD2AEBB55900331011 /* HomeFooterCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D83D23F22AF0A58800331011 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D83D23F32AF0A59800331011 /* Home.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D83D23F52AF0A6BB00331011 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				D83D23F62AF0A6FD00331011 /* home.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +252,7 @@
 				D83D23D32AEBBAEA00331011 /* HomeRecommendContainerCell.xib in Resources */,
 				D83D23CF2AEBB55900331011 /* HomeFooterCell.xib in Resources */,
 				D83D23CB2AEBB33100331011 /* HomeHeaderCell.xib in Resources */,
+				D83D23F72AF0A6FD00331011 /* home.json in Resources */,
 				D83D23DB2AEFAE1F00331011 /* HomeRankingContainerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D83D23F92AF0B63F00331011 /* HomeViewModel.swift in Sources */,
 				D83D23A12AEB855100331011 /* LoginViewController.swift in Sources */,
 				D83D23CA2AEBB33100331011 /* HomeHeaderCell.swift in Sources */,
 				D83D23DE2AEFB31000331011 /* HomeRankingItemCell.swift in Sources */,
@@ -252,6 +279,7 @@
 				D83D239F2AEB855100331011 /* SceneDelegate.swift in Sources */,
 				D83D23C72AEBB25F00331011 /* TabBarController.swift in Sources */,
 				D83D23C22AEBA59800331011 /* HomeVideoCell.swift in Sources */,
+				D83D23F42AF0A59800331011 /* Home.swift in Sources */,
 				D83D23B52AEB964F00331011 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

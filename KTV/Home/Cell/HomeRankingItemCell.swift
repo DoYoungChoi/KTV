@@ -14,6 +14,8 @@ class HomeRankingItemCell: UICollectionViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var rankingNumberLabel: UILabel!
     
+    private var imageTask: Task<Void, Never>?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -23,10 +25,20 @@ class HomeRankingItemCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        self.imageTask?.cancel()
+        self.imageTask = nil
+        self.thumbnailImageView.image = nil
         self.rankingNumberLabel.text = nil
     }
     
-    func setRank(_ rank: Int) {
+    func setData(_ data: Home.Ranking, rank: Int) {
         self.rankingNumberLabel.text = "\(rank)"
+        self.imageTask = .init {
+            guard let responseData = try? await URLSession.shared.data(for: .init(url: data.imageUrl)).0 else {
+                return
+            }
+            
+            self.thumbnailImageView.image = UIImage(data: responseData)
+        }
     }
 }

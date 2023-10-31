@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    private let homeViewModel: HomeViewModel = .init()
     
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
     
@@ -17,12 +18,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         self.setupTableView()
+        // JSON Data 연동
+        self.bindViewModel()
+        self.homeViewModel.requestData()
     }
     
     private func setupTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
         self.tableView.register(
             UINib(nibName: HomeHeaderCell.identifier, bundle: nil),
             forCellReuseIdentifier: HomeHeaderCell.identifier
@@ -47,6 +48,19 @@ class HomeViewController: UIViewController {
             UINib(nibName: HomeFooterCell.identifier, bundle: nil),
             forCellReuseIdentifier: HomeFooterCell.identifier
         )
+        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "empty")
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
+    private func bindViewModel() {
+        // Label과 같은 경우는 바로 데이터를 받아 처리할 수 있지만,
+        // Table View나 Collection View는 바로 데이터를 바인딩할 수 없기 때문에
+        // 콜백을 받아 data를 reload 할 수 있도록 한다.
+        self.homeViewModel.dataChanged = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -106,23 +120,42 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .header:
             return tableView.dequeueReusableCell(withIdentifier: HomeHeaderCell.identifier, for: indexPath)
         case .video:
-            return tableView.dequeueReusableCell(withIdentifier: HomeVideoCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeVideoCell.identifier, for: indexPath)
+            
+            if let cell = cell as? HomeVideoCell,
+               let data = self.homeViewModel.home?.videos[indexPath.item] {
+                cell.setData(data)
+            }
+            
+            return cell
         case .ranking:
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeRankingContainerCell.identifier, for: indexPath)
             
-            (cell as? HomeRankingContainerCell)?.delegate = self
+            if let cell = cell as? HomeRankingContainerCell,
+               let data = self.homeViewModel.home?.rankings {
+                cell.setData(data)
+                cell.delegate = self
+            }
             
             return cell
         case .recentWatch:
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecentWatchContainerCell.identifier, for: indexPath)
             
-            (cell as? HomeRecentWatchContainerCell)?.delegate = self
+            if let cell = cell as? HomeRecentWatchContainerCell,
+               let data = self.homeViewModel.home?.recents {
+                cell.setData(data)
+                cell.delegate = self
+            }
             
             return cell
         case .recommend:
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecommendContainerCell.identifier, for: indexPath)
             
-            (cell as? HomeRecommendContainerCell)?.delegate = self
+            if let cell = cell as? HomeRecommendContainerCell,
+               let data = self.homeViewModel.home?.recommends {
+                cell.setData(data)
+                cell.delegate = self
+            }
             
             return cell
         case .footer:
