@@ -35,6 +35,9 @@ class HomeVideoCell: UITableViewCell {
         self.containerView.layer.cornerRadius = 10
         self.containerView.layer.borderColor = UIColor(named: "stroke-light")?.cgColor
         self.containerView.layer.borderWidth = 1
+        self.containerView.clipsToBounds = true
+        
+        self.channelImageView.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

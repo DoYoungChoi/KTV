@@ -40,7 +40,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pkm-XU-2jP">
-                                        <rect key="frame" x="72" y="40" width="30" height="15"/>
+                                        <rect key="frame" x="67" y="40" width="35" height="15"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:49" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALh-Bf-6jm">
                                                 <rect key="frame" x="3" y="1" width="23" height="12"/>
@@ -54,7 +54,7 @@
                                             <constraint firstItem="ALh-Bf-6jm" firstAttribute="leading" secondItem="Pkm-XU-2jP" secondAttribute="leading" constant="3" id="ARf-77-w3b"/>
                                             <constraint firstAttribute="height" constant="15" id="daa-bb-tXL"/>
                                             <constraint firstItem="ALh-Bf-6jm" firstAttribute="top" secondItem="Pkm-XU-2jP" secondAttribute="top" constant="1" id="epL-Mt-Dq5"/>
-                                            <constraint firstAttribute="width" constant="30" id="xN8-UQ-jiu"/>
+                                            <constraint firstAttribute="width" constant="35" id="xN8-UQ-jiu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -112,7 +112,7 @@
                 <outlet property="playTimeLabel" destination="ALh-Bf-6jm" id="A2U-oA-uTM"/>
                 <outlet property="rankLabel" destination="5Ka-Qk-w0J" id="r1V-Jo-Nbh"/>
                 <outlet property="subtitleLabel" destination="ffq-re-ufb" id="Dy7-uB-xCd"/>
-                <outlet property="thumbnailContainerview" destination="Kxe-Tj-44q" id="aku-aq-MUm"/>
+                <outlet property="thumbnailContainerView" destination="Kxe-Tj-44q" id="aku-aq-MUm"/>
                 <outlet property="thumbnailImageView" destination="ZRq-Ee-82U" id="GaX-nc-k3I"/>
                 <outlet property="titleLabel" destination="8vK-AO-9vj" id="rqo-hk-1ge"/>
             </connections>

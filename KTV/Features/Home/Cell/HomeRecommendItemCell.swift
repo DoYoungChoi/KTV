@@ -12,7 +12,7 @@ class HomeRecommendItemCell: UITableViewCell {
     static let identifier: String = "HomeRecommendItemCell"
     static let height: CGFloat = 71
     
-    @IBOutlet weak var thumbnailContainerview: UIView!
+    @IBOutlet weak var thumbnailContainerView: UIView!
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var playTimeBGView: UIView!
@@ -33,7 +33,8 @@ class HomeRecommendItemCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.thumbnailContainerview.layer.cornerRadius = 5
+        self.thumbnailContainerView.layer.cornerRadius = 5
+        self.thumbnailContainerView.clipsToBounds = true
         self.rankLabel.layer.cornerRadius = 5
         self.rankLabel.clipsToBounds = true
         self.playTimeBGView.layer.cornerRadius = 3
