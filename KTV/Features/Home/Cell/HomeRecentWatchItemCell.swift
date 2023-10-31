@@ -48,13 +48,7 @@ class HomeRecentWatchItemCell: UICollectionViewCell {
     }
     
     func setData(_ data: Home.Recent) {
-        self.imageTask = .init {
-            guard let responseData = try? await URLSession.shared.data(for: .init(url: data.imageUrl)).0 else {
-                return
-            }
-            
-            self.albumImageView.image = UIImage(data: responseData)
-        }
+        self.imageTask = self.albumImageView.loadImage(url: data.imageUrl)
         self.dateLabel.text = Self.dateFormatter.string(from: .init(timeIntervalSince1970: data.timeStamp))
         self.titleLabel.text = data.title
         self.subtitleLabel.text = data.channel

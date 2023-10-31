@@ -38,6 +38,9 @@
 		D83D23F42AF0A59800331011 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D23F32AF0A59800331011 /* Home.swift */; };
 		D83D23F72AF0A6FD00331011 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = D83D23F62AF0A6FD00331011 /* home.json */; };
 		D83D23F92AF0B63F00331011 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D23F82AF0B63F00331011 /* HomeViewModel.swift */; };
+		D83D24032AF0F03800331011 /* URLDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24022AF0F03800331011 /* URLDefines.swift */; };
+		D83D24072AF0F0C400331011 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24062AF0F0C400331011 /* DataLoader.swift */; };
+		D83D240A2AF0F16E00331011 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24092AF0F16E00331011 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,9 @@
 		D83D23F32AF0A59800331011 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D83D23F62AF0A6FD00331011 /* home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
 		D83D23F82AF0B63F00331011 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D83D24022AF0F03800331011 /* URLDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDefines.swift; sourceTree = "<group>"; };
+		D83D24062AF0F0C400331011 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		D83D24092AF0F16E00331011 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +114,9 @@
 			children = (
 				D83D239C2AEB855100331011 /* AppDelegate.swift */,
 				D83D239E2AEB855100331011 /* SceneDelegate.swift */,
+				D83D24042AF0F08F00331011 /* Features */,
 				D83D23F22AF0A58800331011 /* Models */,
-				D83D23F52AF0A6BB00331011 /* JSON */,
-				D83D23B22AEB92D900331011 /* Login */,
-				D83D23B32AEB963F00331011 /* Home */,
+				D83D24052AF0F0A900331011 /* Utils */,
 				D83D23A22AEB855100331011 /* Main.storyboard */,
 				D83D23A52AEB855200331011 /* Assets.xcassets */,
 				D83D23B02AEB859B00331011 /* Colors.xcassets */,
@@ -169,6 +174,7 @@
 		D83D23F22AF0A58800331011 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D83D23F52AF0A6BB00331011 /* JSON */,
 				D83D23F32AF0A59800331011 /* Home.swift */,
 			);
 			path = Models;
@@ -180,6 +186,41 @@
 				D83D23F62AF0A6FD00331011 /* home.json */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		D83D24042AF0F08F00331011 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D83D23B22AEB92D900331011 /* Login */,
+				D83D23B32AEB963F00331011 /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D83D24052AF0F0A900331011 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D83D240B2AF0F5B600331011 /* Network */,
+				D83D24082AF0F15F00331011 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D83D24082AF0F15F00331011 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D83D24092AF0F16E00331011 /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D83D240B2AF0F5B600331011 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D83D24022AF0F03800331011 /* URLDefines.swift */,
+				D83D24062AF0F0C400331011 /* DataLoader.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,14 +305,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D83D240A2AF0F16E00331011 /* UIImageView+Extension.swift in Sources */,
 				D83D23F92AF0B63F00331011 /* HomeViewModel.swift in Sources */,
 				D83D23A12AEB855100331011 /* LoginViewController.swift in Sources */,
+				D83D24032AF0F03800331011 /* URLDefines.swift in Sources */,
 				D83D23CA2AEBB33100331011 /* HomeHeaderCell.swift in Sources */,
 				D83D23DE2AEFB31000331011 /* HomeRankingItemCell.swift in Sources */,
 				D83D23D22AEBBAEA00331011 /* HomeRecommendContainerCell.swift in Sources */,
 				D83D23DA2AEFAE1F00331011 /* HomeRankingContainerCell.swift in Sources */,
 				D83D23CE2AEBB55900331011 /* HomeFooterCell.swift in Sources */,
 				D83D23E82AEFB87300331011 /* HomeRecentWatchItemCell.swift in Sources */,
+				D83D24072AF0F0C400331011 /* DataLoader.swift in Sources */,
 				D83D23F02AEFB90800331011 /* HomeRecentWatchContainerCell.swift in Sources */,
 				D83D239D2AEB855100331011 /* AppDelegate.swift in Sources */,
 				D83D23C52AEBAE3300331011 /* HomeSection.swift in Sources */,

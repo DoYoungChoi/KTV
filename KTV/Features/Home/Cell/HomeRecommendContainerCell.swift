@@ -69,6 +69,13 @@ extension HomeRecommendContainerCell: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: HomeRecommendItemCell.identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecommendItemCell.identifier, for: indexPath)
+        
+        if let cell = cell as? HomeRecommendItemCell,
+           let data = self.recommends?[indexPath.item] {
+            cell.setData(data, rank: indexPath.item + 1)
+        }
+        
+        return cell
     }
 }
