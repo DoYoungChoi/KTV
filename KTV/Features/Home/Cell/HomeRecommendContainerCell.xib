@@ -37,6 +37,9 @@
                                 <state key="normal" image="chevron.down" catalog="system">
                                     <color key="titleColor" name="icon-default"/>
                                 </state>
+                                <connections>
+                                    <action selector="foldButtonDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FBh-vY-hF0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="more-bk"/>

@@ -10,6 +10,7 @@ import Foundation
 @MainActor class HomeViewModel {
     
     private(set) var home: Home?
+    var recommendViewModel: HomeRecommendViewModel = .init()
     var dataChanged: (() -> Void)? // Data 변경에 대한 노티를 받을 수 있는 클로저
     
     func requestData() {
@@ -32,7 +33,9 @@ import Foundation
         // MARK: - 로컬 서버 데이터 fatch 방식
         Task {
             do {
-                self.home = try await DataLoader.load(url: URLDefines.home, for: Home.self)
+                let home = try await DataLoader.load(url: URLDefines.home, for: Home.self)
+                self.home = home
+                self.recommendViewModel.recommends = home.recommends
                 self.dataChanged?()
             } catch {
                 print("data load failed: \(error.localizedDescription)")
