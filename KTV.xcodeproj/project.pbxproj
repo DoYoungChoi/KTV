@@ -55,6 +55,16 @@
 		D83D245A2AF2293300331011 /* BookmarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83D24582AF2293300331011 /* BookmarkCell.xib */; };
 		D83D245C2AF2303400331011 /* VideoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D245B2AF2303400331011 /* VideoListItem.swift */; };
 		D83D245E2AF2329A00331011 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D245D2AF2329A00331011 /* Favorite.swift */; };
+		D83D24622AF2599A00331011 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24602AF2599A00331011 /* VideoViewController.swift */; };
+		D83D24632AF2599A00331011 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83D24612AF2599A00331011 /* VideoViewController.xib */; };
+		D83D24672AF2877200331011 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24652AF2877200331011 /* MoreViewController.swift */; };
+		D83D24682AF2877200331011 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83D24662AF2877200331011 /* MoreViewController.xib */; };
+		D83D246B2AF28D2A00331011 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24692AF28D2900331011 /* MoreTableViewCell.swift */; };
+		D83D246C2AF28D2A00331011 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83D246A2AF28D2900331011 /* MoreTableViewCell.xib */; };
+		D83D246E2AF28DCE00331011 /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D246D2AF28DCE00331011 /* MoreViewModel.swift */; };
+		D83D24702AF2971100331011 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D246F2AF2971100331011 /* Video.swift */; };
+		D83D24722AF2972300331011 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = D83D24712AF2972300331011 /* video.json */; };
+		D83D24742AF2973E00331011 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24732AF2973E00331011 /* VideoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +118,16 @@
 		D83D24582AF2293300331011 /* BookmarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkCell.xib; sourceTree = "<group>"; };
 		D83D245B2AF2303400331011 /* VideoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListItem.swift; sourceTree = "<group>"; };
 		D83D245D2AF2329A00331011 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		D83D24602AF2599A00331011 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		D83D24612AF2599A00331011 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
+		D83D24652AF2877200331011 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		D83D24662AF2877200331011 /* MoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
+		D83D24692AF28D2900331011 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
+		D83D246A2AF28D2900331011 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
+		D83D246D2AF28DCE00331011 /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
+		D83D246F2AF2971100331011 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		D83D24712AF2972300331011 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
+		D83D24732AF2973E00331011 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +227,7 @@
 				D83D245B2AF2303400331011 /* VideoListItem.swift */,
 				D83D24552AF2288700331011 /* Bookmark.swift */,
 				D83D245D2AF2329A00331011 /* Favorite.swift */,
+				D83D246F2AF2971100331011 /* Video.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +238,7 @@
 				D83D23F62AF0A6FD00331011 /* home.json */,
 				D83D24512AF2286800331011 /* bookmark.json */,
 				D83D24532AF2287400331011 /* favorite.json */,
+				D83D24712AF2972300331011 /* video.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -229,6 +251,8 @@
 				D83D23B22AEB92D900331011 /* Login */,
 				D83D23B32AEB963F00331011 /* Home */,
 				D83D24422AF2179F00331011 /* My */,
+				D83D245F2AF2597A00331011 /* Video */,
+				D83D24642AF286D900331011 /* More */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -287,6 +311,28 @@
 				D83D244F2AF2255E00331011 /* FavoriteViewModel.swift */,
 			);
 			path = Favorite;
+			sourceTree = "<group>";
+		};
+		D83D245F2AF2597A00331011 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				D83D24602AF2599A00331011 /* VideoViewController.swift */,
+				D83D24612AF2599A00331011 /* VideoViewController.xib */,
+				D83D24732AF2973E00331011 /* VideoViewModel.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		D83D24642AF286D900331011 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				D83D24692AF28D2900331011 /* MoreTableViewCell.swift */,
+				D83D246A2AF28D2900331011 /* MoreTableViewCell.xib */,
+				D83D24652AF2877200331011 /* MoreViewController.swift */,
+				D83D24662AF2877200331011 /* MoreViewController.xib */,
+				D83D246D2AF28DCE00331011 /* MoreViewModel.swift */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,13 +401,17 @@
 				D83D23A62AEB855200331011 /* Assets.xcassets in Resources */,
 				D83D24542AF2287400331011 /* favorite.json in Resources */,
 				D83D23DF2AEFB31000331011 /* HomeRankingItemCell.xib in Resources */,
+				D83D24632AF2599A00331011 /* VideoViewController.xib in Resources */,
 				D83D23F12AEFB90800331011 /* HomeRecentWatchContainerCell.xib in Resources */,
 				D83D23C32AEBA59800331011 /* HomeVideoCell.xib in Resources */,
 				D83D23A42AEB855100331011 /* Main.storyboard in Resources */,
 				D83D23D32AEBBAEA00331011 /* HomeRecommendContainerCell.xib in Resources */,
+				D83D24722AF2972300331011 /* video.json in Resources */,
 				D83D24522AF2286800331011 /* bookmark.json in Resources */,
 				D83D23CF2AEBB55900331011 /* HomeFooterCell.xib in Resources */,
 				D83D23CB2AEBB33100331011 /* HomeHeaderCell.xib in Resources */,
+				D83D246C2AF28D2A00331011 /* MoreTableViewCell.xib in Resources */,
+				D83D24682AF2877200331011 /* MoreViewController.xib in Resources */,
 				D83D23F72AF0A6FD00331011 /* home.json in Resources */,
 				D83D23DB2AEFAE1F00331011 /* HomeRankingContainerCell.xib in Resources */,
 			);
@@ -384,14 +434,19 @@
 				D83D23CA2AEBB33100331011 /* HomeHeaderCell.swift in Sources */,
 				D83D23DE2AEFB31000331011 /* HomeRankingItemCell.swift in Sources */,
 				D83D24442AF217B700331011 /* MyViewController.swift in Sources */,
+				D83D24622AF2599A00331011 /* VideoViewController.swift in Sources */,
 				D83D24412AF200A500331011 /* HomeRecommendViewModel.swift in Sources */,
 				D83D24592AF2293300331011 /* BookmarkCell.swift in Sources */,
+				D83D24702AF2971100331011 /* Video.swift in Sources */,
 				D83D23D22AEBBAEA00331011 /* HomeRecommendContainerCell.swift in Sources */,
 				D83D23DA2AEFAE1F00331011 /* HomeRankingContainerCell.swift in Sources */,
+				D83D24672AF2877200331011 /* MoreViewController.swift in Sources */,
 				D83D23CE2AEBB55900331011 /* HomeFooterCell.swift in Sources */,
 				D83D23E82AEFB87300331011 /* HomeRecentWatchItemCell.swift in Sources */,
+				D83D246E2AF28DCE00331011 /* MoreViewModel.swift in Sources */,
 				D83D24072AF0F0C400331011 /* DataLoader.swift in Sources */,
 				D83D244C2AF2254A00331011 /* FavoriteViewController.swift in Sources */,
+				D83D246B2AF28D2A00331011 /* MoreTableViewCell.swift in Sources */,
 				D83D23F02AEFB90800331011 /* HomeRecentWatchContainerCell.swift in Sources */,
 				D83D245E2AF2329A00331011 /* Favorite.swift in Sources */,
 				D83D239D2AEB855100331011 /* AppDelegate.swift in Sources */,
@@ -399,6 +454,7 @@
 				D83D24562AF2288700331011 /* Bookmark.swift in Sources */,
 				D83D23C52AEBAE3300331011 /* HomeSection.swift in Sources */,
 				D83D23D62AEBBDE300331011 /* VideoListItemCell.swift in Sources */,
+				D83D24742AF2973E00331011 /* VideoViewModel.swift in Sources */,
 				D83D239F2AEB855100331011 /* SceneDelegate.swift in Sources */,
 				D83D23C72AEBB25F00331011 /* TabBarController.swift in Sources */,
 				D83D244E2AF2255400331011 /* BookmarkViewModel.swift in Sources */,
