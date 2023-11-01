@@ -105,7 +105,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .recentWatch:
             return HomeRecentWatchContainerCell.height
         case .recommend:
-            return HomeRecommendContainerCell.height(viewModel: self.homeViewModel.recommendViewModel)
+            return HomeRecommendContainerCell.height(
+                viewModel: self.homeViewModel.recommendViewModel
+            )
         case .footer:
             return HomeFooterCell.height
         }
