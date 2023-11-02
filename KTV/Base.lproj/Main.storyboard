@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -90,17 +91,119 @@
             </objects>
             <point key="canvasLocation" x="1920" y="-692"/>
         </scene>
-        <!--View Controller-->
+        <!--Live View Controller-->
         <scene sceneID="wXw-Ku-VSt">
             <objects>
-                <viewController id="MM6-rd-7Gt" sceneMemberID="viewController">
+                <viewController id="MM6-rd-7Gt" customClass="LiveViewController" customModule="KTV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jtA-tD-kTj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이브 채널" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR6-WU-nKx">
+                                <rect key="frame" x="30" y="79" width="333" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" name="main-wh"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBu-WZ-xqO">
+                                <rect key="frame" x="16" y="141" width="361" height="592"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73j-RW-nhZ">
+                                        <rect key="frame" x="14" y="19" width="333" height="22"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veS-9Q-0fy">
+                                                <rect key="frame" x="272" y="-3.3333333333333428" width="61" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="방송시작순">
+                                                    <color key="titleColor" name="gray-3"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" name="main-wh"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sortDidTap:" destination="MM6-rd-7Gt" eventType="touchUpInside" id="dZS-pO-nFE"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBD-Nk-nzY">
+                                                <rect key="frame" x="261" y="6" width="1" height="10"/>
+                                                <color key="backgroundColor" name="gray-3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="bVQ-1o-fcr"/>
+                                                    <constraint firstAttribute="width" constant="1" id="dYu-od-idg"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBI-cl-fMM">
+                                                <rect key="frame" x="214" y="-3.3333333333333428" width="37" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="인기순">
+                                                    <color key="titleColor" name="gray-3"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" name="main-wh"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sortDidTap:" destination="MM6-rd-7Gt" eventType="touchUpInside" id="YVa-a6-ipT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="MBI-cl-fMM" firstAttribute="centerY" secondItem="73j-RW-nhZ" secondAttribute="centerY" id="4y2-Sl-ZTA"/>
+                                            <constraint firstAttribute="trailing" secondItem="veS-9Q-0fy" secondAttribute="trailing" id="G3f-3R-kyO"/>
+                                            <constraint firstItem="veS-9Q-0fy" firstAttribute="leading" secondItem="UBD-Nk-nzY" secondAttribute="trailing" constant="10" id="Lgu-xf-gka"/>
+                                            <constraint firstAttribute="height" constant="22" id="OiQ-0z-jTI"/>
+                                            <constraint firstItem="UBD-Nk-nzY" firstAttribute="leading" secondItem="MBI-cl-fMM" secondAttribute="trailing" constant="10" id="kTd-KH-2HX"/>
+                                            <constraint firstItem="veS-9Q-0fy" firstAttribute="centerY" secondItem="73j-RW-nhZ" secondAttribute="centerY" id="qAS-Zv-ajx"/>
+                                            <constraint firstItem="UBD-Nk-nzY" firstAttribute="centerY" secondItem="73j-RW-nhZ" secondAttribute="centerY" id="u65-9z-DZs"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y3r-6K-Xu8">
+                                        <rect key="frame" x="14" y="51" width="333" height="522"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="75Q-xy-VcV">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" name="more-bk"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="73j-RW-nhZ" secondAttribute="trailing" constant="14" id="OBA-ew-tAl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y3r-6K-Xu8" secondAttribute="trailing" constant="14" id="R0d-Ww-eAp"/>
+                                    <constraint firstItem="73j-RW-nhZ" firstAttribute="leading" secondItem="CBu-WZ-xqO" secondAttribute="leading" constant="14" id="Rm5-Er-0Xw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y3r-6K-Xu8" secondAttribute="bottom" constant="19" id="XA7-fg-XZm"/>
+                                    <constraint firstItem="73j-RW-nhZ" firstAttribute="top" secondItem="CBu-WZ-xqO" secondAttribute="top" constant="19" id="g95-6B-dqQ"/>
+                                    <constraint firstItem="Y3r-6K-Xu8" firstAttribute="top" secondItem="73j-RW-nhZ" secondAttribute="bottom" constant="10" id="oFX-z6-7Wn"/>
+                                    <constraint firstItem="Y3r-6K-Xu8" firstAttribute="leading" secondItem="CBu-WZ-xqO" secondAttribute="leading" constant="14" id="pyv-jR-C63"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qxZ-ZC-DkM"/>
                         <color key="backgroundColor" name="bg"/>
+                        <constraints>
+                            <constraint firstItem="qR6-WU-nKx" firstAttribute="leading" secondItem="qxZ-ZC-DkM" secondAttribute="leading" constant="30" id="3fn-aW-dSk"/>
+                            <constraint firstItem="qR6-WU-nKx" firstAttribute="top" secondItem="qxZ-ZC-DkM" secondAttribute="top" constant="20" id="7Fb-hN-vGd"/>
+                            <constraint firstItem="CBu-WZ-xqO" firstAttribute="leading" secondItem="qxZ-ZC-DkM" secondAttribute="leading" constant="16" id="Q9J-f5-pM3"/>
+                            <constraint firstItem="qxZ-ZC-DkM" firstAttribute="trailing" secondItem="qR6-WU-nKx" secondAttribute="trailing" constant="30" id="jvQ-pA-BgW"/>
+                            <constraint firstItem="CBu-WZ-xqO" firstAttribute="top" secondItem="qR6-WU-nKx" secondAttribute="bottom" constant="40" id="loL-OF-UWi"/>
+                            <constraint firstItem="qxZ-ZC-DkM" firstAttribute="bottom" secondItem="CBu-WZ-xqO" secondAttribute="bottom" constant="36" id="vXo-tg-UFc"/>
+                            <constraint firstItem="qxZ-ZC-DkM" firstAttribute="trailing" secondItem="CBu-WZ-xqO" secondAttribute="trailing" constant="16" id="xMI-ls-4nW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tabIcon_live" selectedImage="tabIcon_live_selected" id="qHp-3j-bH0"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Y3r-6K-Xu8" id="3NZ-rf-P13"/>
+                        <outlet property="containerView" destination="CBu-WZ-xqO" id="4vM-kb-qHg"/>
+                        <outlet property="favoriteButton" destination="MBI-cl-fMM" id="Y0a-yE-VZU"/>
+                        <outlet property="startTimeButton" destination="veS-9Q-0fy" id="XAx-UK-sFh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYN-eA-7Zu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -348,6 +451,9 @@
         <image name="user" width="28" height="28"/>
         <namedColor name="bg">
             <color red="0.10599999874830246" green="0.10599999874830246" blue="0.10599999874830246" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray-3">
+            <color red="0.45100000500679016" green="0.45100000500679016" blue="0.45100000500679016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="icon-default">
             <color red="0.73299998044967651" green="0.73299998044967651" blue="0.73299998044967651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

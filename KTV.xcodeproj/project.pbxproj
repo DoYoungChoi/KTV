@@ -68,6 +68,12 @@
 		D83D247A2AF34A0700331011 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24792AF34A0700331011 /* PlayerView.swift */; };
 		D83D247C2AF375BA00331011 /* SeekbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D247B2AF375BA00331011 /* SeekbarView.swift */; };
 		D83D247E2AF37E0B00331011 /* DateComponentsFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D247D2AF37E0B00331011 /* DateComponentsFormatter+Extension.swift */; };
+		D83D24822AF387EC00331011 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24812AF387EC00331011 /* LiveViewController.swift */; };
+		D83D24852AF38D5700331011 /* LiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24832AF38D5700331011 /* LiveCell.swift */; };
+		D83D24862AF38D5700331011 /* LiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83D24842AF38D5700331011 /* LiveCell.xib */; };
+		D83D24882AF3947D00331011 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = D83D24872AF3947D00331011 /* live.json */; };
+		D83D248A2AF3949500331011 /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24892AF3949500331011 /* LiveViewModel.swift */; };
+		D83D248C2AF394F600331011 /* Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D248B2AF394F600331011 /* Live.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +140,12 @@
 		D83D24792AF34A0700331011 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		D83D247B2AF375BA00331011 /* SeekbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekbarView.swift; sourceTree = "<group>"; };
 		D83D247D2AF37E0B00331011 /* DateComponentsFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsFormatter+Extension.swift"; sourceTree = "<group>"; };
+		D83D24812AF387EC00331011 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		D83D24832AF38D5700331011 /* LiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCell.swift; sourceTree = "<group>"; };
+		D83D24842AF38D5700331011 /* LiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCell.xib; sourceTree = "<group>"; };
+		D83D24872AF3947D00331011 /* live.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = live.json; sourceTree = "<group>"; };
+		D83D24892AF3949500331011 /* LiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
+		D83D248B2AF394F600331011 /* Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +246,7 @@
 				D83D24552AF2288700331011 /* Bookmark.swift */,
 				D83D245D2AF2329A00331011 /* Favorite.swift */,
 				D83D246F2AF2971100331011 /* Video.swift */,
+				D83D248B2AF394F600331011 /* Live.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,6 +258,7 @@
 				D83D24512AF2286800331011 /* bookmark.json */,
 				D83D24532AF2287400331011 /* favorite.json */,
 				D83D24712AF2972300331011 /* video.json */,
+				D83D24872AF3947D00331011 /* live.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -259,6 +273,7 @@
 				D83D24422AF2179F00331011 /* My */,
 				D83D245F2AF2597A00331011 /* Video */,
 				D83D24642AF286D900331011 /* More */,
+				D83D24802AF387C200331011 /* Live */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -344,6 +359,17 @@
 			path = More;
 			sourceTree = "<group>";
 		};
+		D83D24802AF387C200331011 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				D83D24832AF38D5700331011 /* LiveCell.swift */,
+				D83D24842AF38D5700331011 /* LiveCell.xib */,
+				D83D24812AF387EC00331011 /* LiveViewController.swift */,
+				D83D24892AF3949500331011 /* LiveViewModel.swift */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -412,6 +438,7 @@
 				D83D23DF2AEFB31000331011 /* HomeRankingItemCell.xib in Resources */,
 				D83D24632AF2599A00331011 /* VideoViewController.xib in Resources */,
 				D83D23F12AEFB90800331011 /* HomeRecentWatchContainerCell.xib in Resources */,
+				D83D24882AF3947D00331011 /* live.json in Resources */,
 				D83D23C32AEBA59800331011 /* HomeVideoCell.xib in Resources */,
 				D83D23A42AEB855100331011 /* Main.storyboard in Resources */,
 				D83D23D32AEBBAEA00331011 /* HomeRecommendContainerCell.xib in Resources */,
@@ -423,6 +450,7 @@
 				D83D24682AF2877200331011 /* MoreViewController.xib in Resources */,
 				D83D23F72AF0A6FD00331011 /* home.json in Resources */,
 				D83D23DB2AEFAE1F00331011 /* HomeRankingContainerCell.xib in Resources */,
+				D83D24862AF38D5700331011 /* LiveCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +473,7 @@
 				D83D24442AF217B700331011 /* MyViewController.swift in Sources */,
 				D83D24622AF2599A00331011 /* VideoViewController.swift in Sources */,
 				D83D24412AF200A500331011 /* HomeRecommendViewModel.swift in Sources */,
+				D83D248A2AF3949500331011 /* LiveViewModel.swift in Sources */,
 				D83D24592AF2293300331011 /* BookmarkCell.swift in Sources */,
 				D83D24702AF2971100331011 /* Video.swift in Sources */,
 				D83D23D22AEBBAEA00331011 /* HomeRecommendContainerCell.swift in Sources */,
@@ -457,7 +486,10 @@
 				D83D24072AF0F0C400331011 /* DataLoader.swift in Sources */,
 				D83D244C2AF2254A00331011 /* FavoriteViewController.swift in Sources */,
 				D83D246B2AF28D2A00331011 /* MoreTableViewCell.swift in Sources */,
+				D83D248C2AF394F600331011 /* Live.swift in Sources */,
 				D83D247C2AF375BA00331011 /* SeekbarView.swift in Sources */,
+				D83D24852AF38D5700331011 /* LiveCell.swift in Sources */,
+				D83D24822AF387EC00331011 /* LiveViewController.swift in Sources */,
 				D83D23F02AEFB90800331011 /* HomeRecentWatchContainerCell.swift in Sources */,
 				D83D245E2AF2329A00331011 /* Favorite.swift in Sources */,
 				D83D239D2AEB855100331011 /* AppDelegate.swift in Sources */,

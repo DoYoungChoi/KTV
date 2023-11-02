@@ -14,5 +14,6 @@ enum URLDefines {
     static let bookmark = "\(base)/my/bookmark"
     static let favorite = "\(base)/my/favorite"
     static let video = "\(base)/video"
+    static let live = "\(base)/live"
     
 }
