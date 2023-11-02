@@ -65,6 +65,7 @@
 		D83D24702AF2971100331011 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D246F2AF2971100331011 /* Video.swift */; };
 		D83D24722AF2972300331011 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = D83D24712AF2972300331011 /* video.json */; };
 		D83D24742AF2973E00331011 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24732AF2973E00331011 /* VideoViewModel.swift */; };
+		D83D247A2AF34A0700331011 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24792AF34A0700331011 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		D83D246F2AF2971100331011 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		D83D24712AF2972300331011 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		D83D24732AF2973E00331011 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		D83D24792AF34A0700331011 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 				D83D24602AF2599A00331011 /* VideoViewController.swift */,
 				D83D24612AF2599A00331011 /* VideoViewController.xib */,
 				D83D24732AF2973E00331011 /* VideoViewModel.swift */,
+				D83D24792AF34A0700331011 /* PlayerView.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				D83D23D22AEBBAEA00331011 /* HomeRecommendContainerCell.swift in Sources */,
 				D83D23DA2AEFAE1F00331011 /* HomeRankingContainerCell.swift in Sources */,
 				D83D24672AF2877200331011 /* MoreViewController.swift in Sources */,
+				D83D247A2AF34A0700331011 /* PlayerView.swift in Sources */,
 				D83D23CE2AEBB55900331011 /* HomeFooterCell.swift in Sources */,
 				D83D23E82AEFB87300331011 /* HomeRecentWatchItemCell.swift in Sources */,
 				D83D246E2AF28DCE00331011 /* MoreViewModel.swift in Sources */,
