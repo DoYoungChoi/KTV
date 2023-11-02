@@ -26,6 +26,20 @@ class MoreViewController: UIViewController {
         self.modalPresentationStyle = .overFullScreen
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        self.setupCornerRadius()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate { _ in
+            self.setupCornerRadius()
+        }
+        
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

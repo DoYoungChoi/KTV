@@ -66,6 +66,8 @@
 		D83D24722AF2972300331011 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = D83D24712AF2972300331011 /* video.json */; };
 		D83D24742AF2973E00331011 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24732AF2973E00331011 /* VideoViewModel.swift */; };
 		D83D247A2AF34A0700331011 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24792AF34A0700331011 /* PlayerView.swift */; };
+		D83D247C2AF375BA00331011 /* SeekbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D247B2AF375BA00331011 /* SeekbarView.swift */; };
+		D83D247E2AF37E0B00331011 /* DateComponentsFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D247D2AF37E0B00331011 /* DateComponentsFormatter+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +132,8 @@
 		D83D24712AF2972300331011 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		D83D24732AF2973E00331011 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		D83D24792AF34A0700331011 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		D83D247B2AF375BA00331011 /* SeekbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekbarView.swift; sourceTree = "<group>"; };
+		D83D247D2AF37E0B00331011 /* DateComponentsFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsFormatter+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				D83D24092AF0F16E00331011 /* UIImageView+Extension.swift */,
+				D83D247D2AF37E0B00331011 /* DateComponentsFormatter+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				D83D24612AF2599A00331011 /* VideoViewController.xib */,
 				D83D24732AF2973E00331011 /* VideoViewModel.swift */,
 				D83D24792AF34A0700331011 /* PlayerView.swift */,
+				D83D247B2AF375BA00331011 /* SeekbarView.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				D83D24072AF0F0C400331011 /* DataLoader.swift in Sources */,
 				D83D244C2AF2254A00331011 /* FavoriteViewController.swift in Sources */,
 				D83D246B2AF28D2A00331011 /* MoreTableViewCell.swift in Sources */,
+				D83D247C2AF375BA00331011 /* SeekbarView.swift in Sources */,
 				D83D23F02AEFB90800331011 /* HomeRecentWatchContainerCell.swift in Sources */,
 				D83D245E2AF2329A00331011 /* Favorite.swift in Sources */,
 				D83D239D2AEB855100331011 /* AppDelegate.swift in Sources */,
@@ -460,6 +467,7 @@
 				D83D23D62AEBBDE300331011 /* VideoListItemCell.swift in Sources */,
 				D83D24742AF2973E00331011 /* VideoViewModel.swift in Sources */,
 				D83D239F2AEB855100331011 /* SceneDelegate.swift in Sources */,
+				D83D247E2AF37E0B00331011 /* DateComponentsFormatter+Extension.swift in Sources */,
 				D83D23C72AEBB25F00331011 /* TabBarController.swift in Sources */,
 				D83D244E2AF2255400331011 /* BookmarkViewModel.swift in Sources */,
 				D83D23C22AEBA59800331011 /* HomeVideoCell.swift in Sources */,
@@ -619,6 +627,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -647,6 +656,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
