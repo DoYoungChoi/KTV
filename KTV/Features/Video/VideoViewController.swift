@@ -9,6 +9,12 @@ import UIKit
 
 class VideoViewController: UIViewController {
     
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY.MM.DD"
+        return formatter
+    }()
+    
     // MARK: - 제어 패널
     @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var portraitControlPannel: UIView!
@@ -29,14 +35,13 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var channelNameLabel: UILabel!
     @IBOutlet weak var recommendTableView: UITableView!
     @IBOutlet weak var recommendTableHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var chattingView: ChattingView!
+    @IBOutlet var chattingViewBottomConstraint: NSLayoutConstraint!
     
+    var isLiveMode: Bool = false
     private var contentSizeObservation: NSKeyValueObservation?
     private var videoViewModel: VideoViewModel = .init()
-    private static let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY.MM.DD"
-        return formatter
-    }()
+    private let chattingHiddenBottomConstant: CGFloat = -500
 
     private var isControlPannelHidden: Bool = true {
         didSet {
@@ -65,15 +70,30 @@ class VideoViewController: UIViewController {
         
         self.seekbarView.delegate = self
         self.playerView.delegate = self
+        self.chattingView.delegate = self
         self.channelThumnailImageView.layer.cornerRadius = 10
         self.setupRecommendTableView()
         self.bindViewModel()
         self.videoViewModel.request()
+        self.chattingView.isHidden = !self.isLiveMode
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+//        self.setEditing(false, animated: true)
         self.switchControlPannel(size: size)
         self.playerViewBottomConstraint.isActive = self.isLandscape(size: size)
+        
+        self.chattingView.textField.resignFirstResponder()
+        if self.isLandscape(size: size) {
+            self.chattingViewBottomConstraint.constant = self.chattingHiddenBottomConstant
+        } else {
+            self.chattingViewBottomConstraint.constant = 0
+        }
+        coordinator.animate { _ in
+            self.chattingView.collectionView.collectionViewLayout.invalidateLayout()
+        }
+        
         super.viewWillTransition(to: size, with: coordinator)
     }
     
@@ -81,8 +101,6 @@ class VideoViewController: UIViewController {
         size.width > size.height
     }
 
-    @IBAction func commentDidTap(_ sender: Any) {
-    }
     
     private func bindViewModel() {
         self.videoViewModel.dataChanged = { [weak self] video in
@@ -144,6 +162,12 @@ extension VideoViewController {
     
     @IBAction func shrinkDidTap(_ sender: Any) {
         self.rotateScene(landscape: false)
+    }
+    
+    @IBAction func commentDidTap(_ sender: Any) {
+        if self.isLiveMode {
+            self.chattingView.isHidden = false
+        }
     }
     
     private func updatePlayButton(isPlaying: Bool) {
@@ -244,5 +268,11 @@ extension VideoViewController: PlayerViewDelegate {
 extension VideoViewController: SeekbarViewDelegate {
     func seekbar(_ seekbar: SeekbarView, seekToPercent percent: Double) {
         self.playerView.seek(to: percent)
+    }
+}
+
+extension VideoViewController: ChattingViewDelegate {
+    func liveChattingViewCloseDidTap(_ chattingView: ChattingView) {
+        self.chattingView.isHidden = true
     }
 }
