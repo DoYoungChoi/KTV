@@ -81,6 +81,7 @@
 		D83D24AA2AF49E1300331011 /* LiveChatMyMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83D24A82AF49E1300331011 /* LiveChatMyMessageCell.xib */; };
 		D83D24AD2AF49FED00331011 /* LiveChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24AB2AF49FED00331011 /* LiveChatMessageCell.swift */; };
 		D83D24AE2AF49FED00331011 /* LiveChatMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83D24AC2AF49FED00331011 /* LiveChatMessageCell.xib */; };
+		D83D24B02AF4E77900331011 /* VideoViewControllerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D24AF2AF4E77900331011 /* VideoViewControllerContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +161,7 @@
 		D83D24A82AF49E1300331011 /* LiveChatMyMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveChatMyMessageCell.xib; sourceTree = "<group>"; };
 		D83D24AB2AF49FED00331011 /* LiveChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatMessageCell.swift; sourceTree = "<group>"; };
 		D83D24AC2AF49FED00331011 /* LiveChatMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveChatMessageCell.xib; sourceTree = "<group>"; };
+		D83D24AF2AF4E77900331011 /* VideoViewControllerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewControllerContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 				D83D24732AF2973E00331011 /* VideoViewModel.swift */,
 				D83D24792AF34A0700331011 /* PlayerView.swift */,
 				D83D247B2AF375BA00331011 /* SeekbarView.swift */,
+				D83D24AF2AF4E77900331011 /* VideoViewControllerContainer.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				D83D23C52AEBAE3300331011 /* HomeSection.swift in Sources */,
 				D83D23D62AEBBDE300331011 /* VideoListItemCell.swift in Sources */,
 				D83D24742AF2973E00331011 /* VideoViewModel.swift in Sources */,
+				D83D24B02AF4E77900331011 /* VideoViewControllerContainer.swift in Sources */,
 				D83D239F2AEB855100331011 /* SceneDelegate.swift in Sources */,
 				D83D247E2AF37E0B00331011 /* DateComponentsFormatter+Extension.swift in Sources */,
 				D83D23C72AEBB25F00331011 /* TabBarController.swift in Sources */,
