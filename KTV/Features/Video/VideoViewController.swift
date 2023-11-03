@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class VideoViewController: UIViewController {
     
@@ -42,6 +43,8 @@ class VideoViewController: UIViewController {
     private var contentSizeObservation: NSKeyValueObservation?
     private var videoViewModel: VideoViewModel = .init()
     private let chattingHiddenBottomConstant: CGFloat = -500
+    
+    private var pipController: AVPictureInPictureController?
 
     private var isControlPannelHidden: Bool = true {
         didSet {
@@ -76,6 +79,7 @@ class VideoViewController: UIViewController {
         self.bindViewModel()
         self.videoViewModel.request()
         self.chattingView.isHidden = !self.isLiveMode
+        self.setupPIPController()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -121,6 +125,20 @@ class VideoViewController: UIViewController {
         self.channelNameLabel.text = video.channel
         self.recommendTableView.reloadData()
     }
+    
+    private func setupPIPController() {
+        guard
+            AVPictureInPictureController.isPictureInPictureSupported(),
+            let playerLayer = self.playerView.avPlayerLayer
+        else {
+            return
+        }
+        
+        let pipController = AVPictureInPictureController(playerLayer: playerLayer)
+        pipController?.canStartPictureInPictureAutomaticallyFromInline = true
+        
+        self.pipController = pipController
+    }
 }
 
 extension VideoViewController {
@@ -135,7 +153,7 @@ extension VideoViewController {
     
     @IBAction func moreDidTap(_ sender: Any) {
         let moreVC = MoreViewController()
-        self.present(moreVC, animated: false)
+        self.present(moreVC, animated: true)
     }
     
     @IBAction func rewindDidTap(_ sender: Any) {

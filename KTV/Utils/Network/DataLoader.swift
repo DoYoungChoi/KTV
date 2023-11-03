@@ -19,4 +19,21 @@ struct DataLoader {
         let jsonDecoder = JSONDecoder()
         return try jsonDecoder.decode(T.self, from: data)
     }
+    
+    static func load<T: Decodable>(json: String, for type: T.Type) throws -> T {
+        guard
+            let jsonURL = Bundle.main.url(forResource: json, withExtension: "json")
+        else {
+            throw JSONError.notFound
+        }
+        
+        let jsonDecoder = JSONDecoder()
+        let data = try Data(contentsOf: jsonURL)
+        let model = try jsonDecoder.decode(T.self, from: data)
+        return model
+    }
+}
+
+enum JSONError: Error {
+    case notFound
 }
